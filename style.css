@@ -1,0 +1,514 @@
+/* COLOR PALETTE & VARIABLES */
+:root {
+  --white: #ffffff;
+  --beige: #f5f5f0;
+  --olive: #556b2f; /* Deep Olive Green */
+  --sage: #a3b18a; /* Muted Sage */
+  --text: #333333;
+  --light-text: #777777;
+}
+
+/* BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+.logo {
+  font-family: "Playfair Display", serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.logo {
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: var(--olive);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--olive);
+}
+
+/* --- NAVBAR RIGHT ACTIONS (Updated for Login Fix) --- */
+#navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Spacing between Login, Signup, or Cart, Logout */
+}
+
+/* Styles for the dynamic links (Login, Signup, Cart) */
+#navbar-actions a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+#navbar-actions a:hover {
+  color: var(--olive);
+}
+
+/* Specific Style for "Sign Up" to look distinct */
+.btn-signup {
+    background-color: var(--olive);
+    color: white !important; /* Force white text */
+    padding: 8px 18px;
+    border-radius: 2px;
+}
+.btn-signup:hover {
+    background-color: var(--sage);
+}
+
+/* Style for the Logout Button (Created by JS) */
+.btn-logout {
+  background: transparent;
+  border: 1px solid var(--olive);
+  color: var(--olive);
+  padding: 6px 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+.btn-logout:hover {
+  background-color: var(--olive);
+  color: white;
+}
+
+/* --- END NAVBAR ACTIONS --- */
+
+/* HERO SECTION */
+.hero {
+  height: 90vh;
+  background: url("./images/b4.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.home-hero {
+  height: 90vh;
+  background: url("./images/Gemini_Generated_Image_lypeclypeclypecl.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+}
+
+.hero-text {
+  color: white;
+  max-width: 600px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 14px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+.hero-btns {
+  margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 15px 35px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--olive);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--sage);
+}
+
+.btn-secondary {
+  border: 1px solid white;
+  color: white;
+}
+.btn-secondary:hover {
+  background: white;
+  color: black;
+}
+
+/* PHILOSOPHY SECTION */
+.philosophy {
+  padding: 100px 8%;
+  background-color: var(--beige);
+}
+
+.phi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.phi-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.check-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.check-list li {
+  margin-bottom: 10px;
+  color: var(--olive);
+  font-weight: 500;
+}
+
+.phi-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* CATEGORIES */
+.categories {
+  padding: 80px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cat-card {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cat-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.cat-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  padding: 10px 25px;
+  font-weight: 500;
+}
+
+.cat-card:hover img {
+  transform: scale(1.1);
+}
+
+/* PRODUCT SECTION */
+.shop {
+  padding: 80px 8%;
+  background: var(--white);
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--light-text);
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--sage);
+  color: white;
+  padding: 5px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.p-details {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.p-price {
+  color: var(--olive);
+  font-weight: 600;
+}
+
+.add-to-cart {
+  margin-top: 10px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--text);
+  padding: 5px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.add-to-cart:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+}
+
+/* NEWSLETTER */
+.newsletter {
+  padding: 100px 8%;
+  background: var(--beige);
+  text-align: center;
+}
+
+.news-content h2 {
+  font-size: 2.2rem;
+}
+
+.news-form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.news-form input {
+  padding: 15px 25px;
+  width: 350px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.news-form button {
+  padding: 15px 35px;
+  background: var(--olive);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* CONTACT SECTION STYLES */
+.contact-section {
+  padding: 100px 8%;
+  background-color: var(--white);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--olive);
+}
+
+.info-item {
+  margin-top: 25px;
+}
+
+.info-item strong {
+  display: block;
+  color: var(--olive);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  background: var(--beige);
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--olive);
+}
+
+.submit-btn {
+  padding: 15px;
+  background: var(--olive);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: var(--sage);
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #eee;
+  padding: 80px 8% 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.footer-info .logo {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.footer-links h4 {
+  margin-bottom: 20px;
+  color: var(--sage);
+}
+
+.footer-links a,
+.footer-links p {
+  display: block;
+  color: #bbb;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-bar {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .phi-grid {
+    grid-template-columns: 1fr;
+  }
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

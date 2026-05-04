@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Decor Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">ESSENCE</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apparel.html">Apparel</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
+      </ul>
+
+      <div id="navbar-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="login.html" class="btn-signup">Sign Up</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="home-hero">
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <p class="subtitle">Premium Home Decor</p>
+          <h1>
+            Style Your Home<br />
+            With Elegance
+          </h1>
+
+          <div class="hero-btns">
+            <a href="#shop" class="btn-primary">Shop Now</a>
+            <a href="#philosophy" class="btn-secondary">Explore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy" class="philosophy">
+      <div class="phi-grid">
+        <div class="phi-content">
+          <h2>Our Design Philosophy</h2>
+          <p>
+            We bring beauty and sophistication into your home with sustainable,
+            handcrafted décor products.
+          </p>
+
+          <ul class="check-list">
+            <li>✔ Eco-Friendly Materials</li>
+            <li>✔ Handcrafted Products</li>
+            <li>✔ Elegant & Timeless Styles</li>
+          </ul>
+        </div>
+
+        <div class="phi-image">
+          <img
+            src="./images/minimalist-living-room-with-beige-colour.jpg"
+            alt="Decor Image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP SECTION -->
+    <section class="shop" id="shop">
+      <h2 class="section-title">Top Selling Products</h2>
+      <p class="section-sub">Premium & stylish home décor items</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./images/p1.jpg" alt="" />
+          <span class="badge">New</span>
+          <div class="p-details">
+            <h4>Ceramic Flower Vase</h4>
+            <p class="p-price">₹899</p>
+            <button class="add-to-cart" onclick="addToCart('Ceramic Flower Vase', 899, './images/p1.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/p2.jpeg" alt="" />
+          <div class="p-details">
+            <h4>Wooden Wall Frame</h4>
+            <p class="p-price">₹1499</p>
+            <button class="add-to-cart" onclick="addToCart('Wooden wall frame', 1499, './images/p2.jpeg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/p3.jpeg" alt="" />
+          <span class="badge">Sale</span>
+          <div class="p-details">
+            <h4>Handcrafted Lamp</h4>
+            <p class="p-price">₹1299</p>
+            <button class="add-to-cart" onclick="addToCart('Handcrafted Lamp', 1299, './images/p3.jpeg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/p4.jpg" alt="" />
+          <div class="p-details">
+            <h4>Table Planter Pot</h4>
+            <p class="p-price">₹599</p>
+            <button class="add-to-cart" onclick="addToCart('Table Planter Pot', 599, './images/p4.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/p5.jpeg" alt="" />
+          <span class="badge">Popular</span>
+          <div class="p-details">
+            <h4>Luxury Candle Set</h4>
+            <p class="p-price">₹899</p>
+            <button class="add-to-cart" onclick="addToCart('Luxury Candle Set', 899, './images/p5.jpeg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/p6.jpg" alt="" />
+          <div class="p-details">
+            <h4>Wall Clock Modern</h4>
+            <p class="p-price">₹1799</p>
+            <button class="add-to-cart" onclick="addToCart('Wall Clock Modern', 1799,'./images/p6.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Contact Us</h2>
+
+          <div class="info-item">
+            <strong>Email</strong>
+            contact@homedecor.com
+          </div>
+
+          <div class="info-item">
+            <strong>Phone</strong>
+            +91 98765 43210
+          </div>
+
+          <div class="info-item">
+            <strong>Address</strong>
+            Delhi, India
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea rows="5" placeholder="Message" required></textarea>
+          </div>
+
+          <button class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="logo">HomeDecor</div>
+          <p>Premium handcrafted home décor products.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#shop">Shop</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Customer Service</h4>
+          <p>Return Policy</p>
+          <p>Shipping Info</p>
+          <p>Support</p>
+        </div>
+      </div>
+
+      <div class="footer-bar">© 2025 HomeDecor Store. All Rights Reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESSENCE | Minimalist Living</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">ESSENCE</div>
+
+      <div class="nav-links">
+        <a href="apparel.html">Apparel</a>
+        <a href="home-decor.html">Home Decor</a>
+        <a href="accessories.html">Accessories</a>
+      </div>
+
+      <div id="navbar-actions" class="nav-actions">
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+
+    <script src="script.js"></script>
+    <header id="home" class="hero">
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <span class="subtitle">New Collection 2024</span>
+          <h1>
+            Simplicity is the <br />
+            Ultimate Sophistication
+          </h1>
+          <p>Curated minimalist essentials for your home and wardrobe.</p>
+          <div class="hero-btns">
+            <a href="#shop" class="btn-primary">Shop Now</a>
+            <a href="#philosophy" class="btn-secondary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="philosophy" class="philosophy">
+      <div class="container">
+        <div class="phi-grid">
+          <div class="phi-content">
+            <h2>Modern. Ethical. Minimal.</h2>
+            <p>
+              We believe that luxury shouldn't be loud. Our mission is to
+              provide high-quality, sustainable goods that blend seamlessly into
+              a modern lifestyle. Every piece is crafted with intention.
+            </p>
+            <ul class="check-list">
+              <li>✓ Sustainably Sourced</li>
+              <li>✓ Handcrafted Quality</li>
+              <li>✓ Timeless Aesthetics</li>
+            </ul>
+          </div>
+          <div class="phi-image">
+            <img src="./images/index-philosophy.avif" alt="Minimalist Fashion" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="categories">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="category-grid">
+        <div class="cat-card">
+          <img src="./images/fashion-portrait-young-elegant-woman.jpg" alt="Apparel" />
+          <a class="" href="apparel.html"
+            ><div class="cat-label">Apparel</div></a
+          >
+        </div>
+        <div class="cat-card">
+          <img src="./images/home-decor.jpg" alt="Home Decor" />
+          <a href="home-decor.html"><div class="cat-label">Home Decor</div></a>
+        </div>
+        <div class="cat-card">
+          <img src="./images/accessories.avif" alt="Accessories" />
+          <a href="accessories.html"
+            ><div class="cat-label">Accessories</div></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="shop">
+      <h2 class="section-title">The Seasonal Edit</h2>
+      <p class="section-sub">
+        Carefully selected pieces for the minimalist soul.
+      </p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="badge">Eco-friendly</div>
+          <img src="./images/olive-coat.webp" alt="Coat" />
+          <div class="p-details">
+            <h3>Olive Wool Blend Coat</h3>
+            <p class="p-price">₹1850</p>
+            <button class="add-to-cart" onclick="addToCart('Woof Blend Coat', 1850, './images/olive-coat.webp')">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./images/oak-chair.webp" alt="Chair" />
+          <div class="p-details">
+            <h3>Scandinavian Oak Chair</h3>
+            <p class="p-price">₹2400</p>
+            <button class="add-to-cart" onclick="addToCart('Oak chair', 2400, './images/oak-chair.webp')">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./images/vase.jpg" alt="Vase" />
+          <div class="p-details">
+            <h3>Beige Ceramic Vase Set</h3>
+            <p class="p-price">₹550</p>
+            <button class="add-to-cart" onclick="addToCart('Ceramic vase', 550, './images/vase.jpg')">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="./images/linen-trowser.webp" alt="Linen" />
+          <div class="p-details">
+            <h3>Organic Linen Trousers</h3>
+            <p class="p-price">₹900</p>
+            <button class="add-to-cart" onclick="addToCart('Linen Trousers', 900, './images/linen-trowser.webp')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="news-content">
+        <h2>Join the Inner Circle</h2>
+        <p>Subscribe for early access to new drops and design inspiration.</p>
+        <form class="news-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>
+            Have questions about our collection or your order? We're here to
+            help.
+          </p>
+          <div class="info-item">
+            <strong>Visit Us:</strong>
+            <p>123 Minimalist Way, Design District</p>
+          </div>
+          <div class="info-item">
+            <strong>Email:</strong>
+            <p>support@essence.com</p>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required />
+          </div>
+          <div class="form-group">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <h2 class="logo">ESSENCE</h2>
+          <p>
+            Minimalist goods for the modern aesthetic. Designed for longevity
+            and style.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Center</a>
+          <a href="#">FAQ</a>
+          <a href="admin.html" style="color: var(--sage)">Admin Access</a>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <p>hello@essence.com</p>
+          <p>+1 234 567 890</p>
+        </div>
+      </div>
+      <div class="footer-bar">
+        &copy; 2024 ESSENCE. Created for Minor Project.
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessories Collection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">ESSENCE</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apparel.html">Apparel</a></li>
+        <li><a href="home-decor.html">Home Decor</a></li>
+      </ul>
+
+      <div id="navbar-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="login.html" class="btn-signup">Sign Up</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      class="hero"
+      style="
+        background-image: url('./images/Elevate\ your\ style\ with\ this\ stunning\ gold….jpg');
+      "
+    >
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <p class="subtitle">Premium Accessories</p>
+          <h1>Small Details<br />Big Style</h1>
+
+          <div class="hero-btns">
+            <a href="#shop" class="btn-primary">Shop Now</a>
+            <a href="#shop" class="btn-secondary">Explore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+      <h2 class="section-title">Shop Accessories</h2>
+
+      <div class="category-grid">
+        <div class="cat-card">
+          <img
+            src="./images/Discover 5 tips for styling leather bags that….jpg"
+            alt=""
+          />
+          <div class="cat-label">Bags</div>
+        </div>
+
+        <div class="cat-card">
+          <img src="./images/Discover this elegant black wristwatch – the….jpg" alt="" />
+          <div class="cat-label">Watches</div>
+        </div>
+
+        <div class="cat-card">
+          <img src="./images/Preto Elegante Collar     Embellished.jpg" alt="" />
+          <div class="cat-label">Jewellery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP SECTION -->
+    <section class="shop" id="shop">
+      <h2 class="section-title">Accessories Collection</h2>
+      <p class="section-sub">Style that completes your look</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img
+            src="./images/Discover the elegant leather shoulder bag for….jpg"
+            alt=""
+          />
+          <span class="badge">New</span>
+          <div class="p-details">
+            <h4>Leather Handbag</h4>
+            <p class="p-price">₹2199</p>
+            <button class="add-to-cart" onclick="addToCart('Leather Handbag', 2199, './images/Discover the elegant leather shoulder bag for….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Carlington_elite_analog_men_s_watch_ct1040_brownsilver.webp"
+            alt=""
+          />
+          <div class="p-details">
+            <h4>Classic Wrist Watch</h4>
+            <p class="p-price">₹3499</p>
+            <button class="add-to-cart" onclick="addToCart('Classic Wrist Watch', 3499,'./images/Carlington_elite_analog_men_s_watch_ct1040_brownsilver.webp')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/Prata  Collar  Liga de Zinco   Embellished.jpg" alt="" />
+          <span class="badge">Popular</span>
+          <div class="p-details">
+            <h4>Silver Necklace</h4>
+            <p class="p-price">₹1599</p>
+            <button class="add-to-cart" onclick="addToCart('Silver Necklace', 1599,'./images/Prata  Collar  Liga de Zinco   Embellished.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/1pc Women Geometric Frame Copper Classical Fashion….jpg"
+            alt=""
+          />
+          <div class="p-details">
+            <h4>Stylish Sunglasses</h4>
+            <p class="p-price">₹999</p>
+            <button class="add-to-cart" onclick="addToCart('Stylish Sunglasses', 999,'./images/1pc Women Geometric Frame Copper Classical Fashion….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Discover slim leather wallets for practical use….jpg"
+            alt=""
+          />
+          <span class="badge">Sale</span>
+          <div class="p-details">
+            <h4>Leather Wallet</h4>
+            <p class="p-price">₹799</p>
+            <button class="add-to-cart" onclick="addToCart('Leather Wallet', 799,'./images/Discover slim leather wallets for practical use….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Ouro amarelo  Collar  Aço Inoxidável   Embellished.jpg"
+            alt=""
+          />
+          <div class="p-details">
+            <h4>Fashion Bracelet</h4>
+            <p class="p-price">₹699</p>
+            <button class="add-to-cart" onclick="addToCart('Fashion Bracelet',699,'./images/Ouro amarelo  Collar  Aço Inoxidável   Embellished.jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+
+          <div class="info-item">
+            <strong>Email</strong>
+            support@accessories.com
+          </div>
+
+          <div class="info-item">
+            <strong>Phone</strong>
+            +91 91234 56789
+          </div>
+
+          <div class="info-item">
+            <strong>Address</strong>
+            Delhi, India
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea rows="5" placeholder="Message" required></textarea>
+          </div>
+
+          <button class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="logo">HomeDecor</div>
+          <p>Accessories that elevate your everyday style.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="home.html">Home</a>
+          <a href="apparel.html">Apparel</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <p>Returns</p>
+          <p>Shipping</p>
+          <p>Help Center</p>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        © 2025 Accessories Store. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apparel Collection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">ESSENCE</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="home-decor.html">Home Decor</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
+      </ul>
+
+      <div id="navbar-actions">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="login.html" class="btn-signup">Sign Up</a>
+      </div>
+    </nav>
+
+    <section
+      class="hero"
+      style="
+        background-image: url('./images/beautiful-woman-wearing-minimalist-shirt.jpg');
+      "
+    >
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <p class="subtitle">Modern Apparel</p>
+          <h1>Wear Style<br />Live Comfort</h1>
+
+          <div class="hero-btns">
+            <a href="#shop" class="btn-primary">Shop Now</a>
+            <a href="#shop" class="btn-secondary">Explore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2 class="section-title">Shop by Apparel</h2>
+
+      <div class="category-grid">
+        <div class="cat-card">
+          <img src="./images/download.jpg" alt="" />
+          <div class="cat-label">Men</div>
+        </div>
+
+        <div class="cat-card">
+          <img src="./images/portrait-young-elegant-woman.jpg" alt="" />
+          <div class="cat-label">Women</div>
+        </div>
+
+        <div class="cat-card">
+          <img src="./images/Preto Elegante Collar     Embellished.jpg" alt="" />
+          <div class="cat-label">Accessories</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <h2 class="section-title">Apparel Collection</h2>
+      <p class="section-sub">Comfortable • Trendy • Everyday Wear</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="./images/men-cotton-t-shirt.jpg" alt="" />
+          <span class="badge">New</span>
+          <div class="p-details">
+            <h4>Men Cotton Shirt</h4>
+            <p class="p-price">₹999</p>
+            <button class="add-to-cart" onclick="addToCart('Men Cotton Shirt',999,'./images/men-cotton-t-shirt.jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/Washing instructions_ Hand Wash Composition….jpg" alt="" />
+          <div class="p-details">
+            <h4>Women Floral Dress</h4>
+            <p class="p-price">₹1499</p>
+            <button class="add-to-cart" onclick="addToCart('Women Floral Dress',1499,'./images/Washing instructions_ Hand Wash Composition….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Apricot Casual Collar Long Sleeve Knitted Fabric….jpg"
+            alt=""
+          />
+          <span class="badge">Sale</span>
+          <div class="p-details">
+            <h4>Unisex Hoodie</h4>
+            <p class="p-price">₹1799</p>
+            <button class="add-to-cart" onclick="addToCart('Unisex Hoodie',1799,'./images/Apricot Casual Collar Long Sleeve Knitted Fabric….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Light Blue Wash Knee Rip Extreme Wide Leg Jeans….jpg"
+            alt=""
+          />
+          <div class="p-details">
+            <h4>Denim Jeans</h4>
+            <p class="p-price">₹1999</p>
+            <button class="add-to-cart" onclick="addToCart('Denim Jeans',1999 ,'./images/Light Blue Wash Knee Rip Extreme Wide Leg Jeans….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Camiseta Raglan Cáqui Casual Simples com Estampa….jpg"
+            alt=""
+          />
+          <span class="badge">Popular</span>
+          <div class="p-details">
+            <h4>Casual T-Shirt</h4>
+            <p class="p-price">₹799</p>
+            <button class="add-to-cart" onclick="addToCart('Casual T-Shirt',799,'./images/Camiseta Raglan Cáqui Casual Simples com Estampa….jpg')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="./images/Style_ Casual_Street_Vintage_PreppyFabric Content….jpg"
+            alt=""
+          />
+          <div class="p-details">
+            <h4>Winter Jacket</h4>
+            <p class="p-price">₹2999</p>
+            <button class="add-to-cart" onclick="addToCart('Winter Jacket',2999,'./images/Style_ Casual_Street_Vintage_PreppyFabric Content….jpg')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Need Help?</h2>
+
+          <div class="info-item">
+            <strong>Email</strong>
+            support@apparelstore.com
+          </div>
+
+          <div class="info-item">
+            <strong>Phone</strong>
+            +91 90000 11111
+          </div>
+
+          <div class="info-item">
+            <strong>Address</strong>
+            Delhi, India
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea rows="5" placeholder="Message" required></textarea>
+          </div>
+
+          <button class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="logo">HomeDecor</div>
+          <p>Fashion & lifestyle essentials curated for you.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="home.html">Home</a>
+          <a href="apparel.html">Apparel</a>
+          <a href="#shop">Shop</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <p>Returns</p>
+          <p>Shipping</p>
+          <p>Help Center</p>
+        </div>
+      </div>
+
+      <div class="footer-bar">© 2025 Apparel Store. All Rights Reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESSENCE | Your Bag</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .cart-section {
+        padding: 80px 8%;
+        min-height: 70vh;
+      }
+
+      .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+      }
+
+      .cart-table th {
+        text-align: left;
+        padding: 15px;
+        border-bottom: 2px solid var(--beige);
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1px;
+      }
+
+      .cart-table td {
+        padding: 20px 15px;
+        border-bottom: 1px solid #eee;
+        vertical-align: middle;
+      }
+
+      .cart-item-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .cart-item-info img {
+        width: 80px;
+        height: 100px;
+        object-fit: cover;
+        background: #f9f9f9;
+      }
+
+      .qty-input {
+        width: 50px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      .remove-btn {
+        background: none;
+        border: none;
+        color: #a33;
+        cursor: pointer;
+        font-size: 12px;
+        text-decoration: underline;
+      }
+
+      .cart-summary {
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .summary-box {
+        width: 350px;
+        background: var(--beige);
+        padding: 30px;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .summary-row.total {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #ccc;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--olive);
+      }
+
+      .empty-msg {
+        text-align: center;
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">ESSENCE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apparel.html">Apparel</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
+      </ul>
+      <div id="navbar-actions"></div>
+    </nav>
+
+    <section class="cart-section">
+      <h1 class="section-title">Shopping Bag</h1>
+
+      <div id="cart-content"></div>
+
+      <div class="cart-summary" id="cart-summary" style="display: none">
+        <div class="summary-box">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal-val">₹0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>₹50.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total-val">₹0.00</span>
+          </div>
+          <button
+            class="submit-btn"
+            style="width: 100%; margin-top: 20px"
+            onclick="checkout()"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCartPage();
+      });
+
+      function renderCartPage() {
+        const cart = JSON.parse(localStorage.getItem("myCart")) || [];
+        const displayArea = document.getElementById("cart-content");
+        const summaryArea = document.getElementById("cart-summary");
+
+        if (cart.length === 0) {
+          displayArea.innerHTML = `
+                    <div class="empty-msg">
+                        <p>Your bag is currently empty.</p>
+                        <br>
+                        <a href="index.html" class="btn-primary">Start Shopping</a>
+                    </div>`;
+          summaryArea.style.display = "none";
+          return;
+        }
+
+        summaryArea.style.display = "flex";
+        let subtotal = 0;
+
+        let tableHTML = `
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+        cart.forEach((item, index) => {
+          const lineTotal = item.price * item.quantity;
+          subtotal += lineTotal;
+
+          tableHTML += `
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <img src="${item.image}" alt="${item.name}">
+                                <div>
+                                    <p style="font-weight:500;">${item.name}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>₹${item.price.toFixed(2)}</td>
+                        <td>
+                            <input type="number" class="qty-input" value="${
+                              item.quantity
+                            }" min="1" 
+                            onchange="updateCartQty(${index}, this.value)">
+                        </td>
+                        <td>₹${lineTotal.toFixed(2)}</td>
+                        <td><button class="remove-btn" onclick="removeCartItem(${index})">Remove</button></td>
+                    </tr>
+                `;
+        });
+
+        tableHTML += `</tbody></table>`;
+        displayArea.innerHTML = tableHTML;
+
+        // Update Summary
+        document.getElementById(
+          "subtotal-val"
+        ).innerText = `₹${subtotal.toFixed(2)}`;
+        document.getElementById("total-val").innerText = `₹${(
+          subtotal + 50
+        ).toFixed(2)}`;
+      }
+
+      function updateCartQty(index, val) {
+        let cart = JSON.parse(localStorage.getItem("myCart"));
+        cart[index].quantity = parseInt(val);
+        localStorage.setItem("myCart", JSON.stringify(cart));
+        renderCartPage();
+        if (typeof updateNavbar === "function") updateNavbar();
+      }
+
+      function removeCartItem(index) {
+        let cart = JSON.parse(localStorage.getItem("myCart"));
+        cart.splice(index, 1);
+        localStorage.setItem("myCart", JSON.stringify(cart));
+        renderCartPage();
+        if (typeof updateNavbar === "function") updateNavbar();
+      }
+
+      function checkout() {
+        alert(
+          "Thank you for your order! Essence is now processing your request."
+        );
+        localStorage.removeItem("myCart");
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

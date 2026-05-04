@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ESSENCE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .auth-page {
+            background-color: #F5F5F0; /* Your Beige theme */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .auth-card {
+            background: #fff;
+            padding: 50px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .auth-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #556B2F; /* Olive Green */
+        }
+        .auth-card p { margin-bottom: 30px; color: #777; font-size: 0.9rem; }
+        .auth-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        .auth-form input:focus { border-color: #556B2F; }
+        .auth-submit {
+            width: 100%;
+            padding: 15px;
+            background: #556B2F;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .auth-submit:hover { background: #A3B18A; }
+        .switch-form { margin-top: 20px; font-size: 0.85rem; color: #666; }
+        .switch-form span { color: #556B2F; cursor: pointer; font-weight: 500; }
+    </style>
+</head>
+<body class="auth-page">
+
+    <div class="auth-card">
+        <h2 id="auth-title">Login</h2>
+        <p id="auth-subtitle">Welcome back to ESSENCE.</p>
+
+        <form class="auth-form" onsubmit="processAuth(event)">
+            <input type="text" id="user-field" placeholder="Full Name" style="display: none;">
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="auth-submit" id="auth-button">Sign In</button>
+        </form>
+
+        <div class="switch-form">
+            <p id="toggle-text">Don't have an account? <span onclick="toggleAuth()">Create one</span></p>
+            <br>
+            <a href="index.html" style="text-decoration:none; color:#999;">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        let isLoginView = true;
+
+        function toggleAuth() {
+            isLoginView = !isLoginView;
+            document.getElementById('auth-title').innerText = isLoginView ? "Login" : "Register";
+            document.getElementById('auth-button').innerText = isLoginView ? "Sign In" : "Create Account";
+            document.getElementById('user-field').style.display = isLoginView ? "none" : "block";
+            document.getElementById('toggle-text').innerHTML = isLoginView ? 
+                "Don't have an account? <span onclick='toggleAuth()'>Create one</span>" : 
+                "Already have an account? <span onclick='toggleAuth()'>Login instead</span>";
+        }
+
+        function processAuth(e) {
+            e.preventDefault();
+            localStorage.setItem("isLoggedIn", "true");
+            alert("Redirecting to your minimalist home...");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
